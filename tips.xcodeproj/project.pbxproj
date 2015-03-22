@@ -13,6 +13,7 @@
 		43C70AD11ABE45D8005D39C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C70AD01ABE45D8005D39C0 /* Images.xcassets */; };
 		43C70AD41ABE45D8005D39C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C70AD21ABE45D8005D39C0 /* LaunchScreen.xib */; };
 		43C70AE01ABE45D8005D39C0 /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C70ADF1ABE45D8005D39C0 /* tipsTests.swift */; };
+		43C70AEA1ABE5BEB005D39C0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C70AE91ABE5BEB005D39C0 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		43C70AD91ABE45D8005D39C0 /* tipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C70ADE1ABE45D8005D39C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C70ADF1ABE45D8005D39C0 /* tipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTests.swift; sourceTree = "<group>"; };
+		43C70AE91ABE5BEB005D39C0 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				43C70AC91ABE45D8005D39C0 /* AppDelegate.swift */,
 				43C70ACB1ABE45D8005D39C0 /* ViewController.swift */,
+				43C70AE91ABE5BEB005D39C0 /* SettingViewController.swift */,
 				43C70ACD1ABE45D8005D39C0 /* Main.storyboard */,
 				43C70AD01ABE45D8005D39C0 /* Images.xcassets */,
 				43C70AD21ABE45D8005D39C0 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				43C70ACC1ABE45D8005D39C0 /* ViewController.swift in Sources */,
 				43C70ACA1ABE45D8005D39C0 /* AppDelegate.swift in Sources */,
+				43C70AEA1ABE5BEB005D39C0 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
