@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
@@ -23,13 +24,13 @@ class ViewController: UIViewController {
     
     let currencySymbols = ["$", "€", "¥", "£"]
     var currencyInUse = 0
+    var darkBackgroundBool = false
+    var defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tipLabel.text = currencySymbols[currencyInUse] + "0.00"
-        totalLabel.text = currencySymbols[currencyInUse] + "0.00"
         billField.becomeFirstResponder()
         animateClean(0)
         
@@ -41,56 +42,68 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        
-        let tipPercentages = [0.18, 0.2, 0.22]
-        var tipPctSelected = tipPercentages[tipControl.selectedSegmentIndex]
-        
-
         if billField.text.isEmpty {
             animateClean(0.5)
-            
         } else {
-            // Cast as NSString and use doubleValue instead
-            var billAmount = (billField.text as NSString).doubleValue
-            var tipAmount = billAmount * tipPctSelected
-            var totalAmount = billAmount + tipAmount
-        
-            // Update the labels
-            tipLabel.text = currencySymbols[currencyInUse] + String(format: "%.2f", tipAmount)
-            totalLabel.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount)
-            totalForTwo.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount/2)
-            totalForThree.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount/3)
-            totalForFour.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount/4)
-            
+            updateAllFields()
             animateShowAmount(0.5)
-            
         }
     }
     
+    // Helper function to update all fields
+    func updateAllFields() {
+        let tipPercentages = [0.18, 0.2, 0.22]
+        var tipPctSelected = tipPercentages[tipControl.selectedSegmentIndex]
+        
+        // Cast as NSString and use doubleValue instead
+        var billAmount = (billField.text as NSString).doubleValue
+        var tipAmount = billAmount * tipPctSelected
+        var totalAmount = billAmount + tipAmount
+        
+        // Update the labels
+        tipLabel.text = currencySymbols[currencyInUse] + String(format: "%.2f", tipAmount)
+        totalLabel.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount)
+        totalForTwo.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount/2)
+        totalForThree.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount/3)
+        totalForFour.text = currencySymbols[currencyInUse] + String(format: "%.2f", totalAmount/4)
+    }
+    
     // Clean the screen when no bill amount is entered
-    func animateClean(timeToAnimate: NSTimeInterval){
+    func animateClean(timeToAnimate: NSTimeInterval) {
         UIView.animateWithDuration(timeToAnimate, animations: {
             // This causes the dark rec to recede
             self.darkRec.frame.origin.y = 1000
             self.greenRec.frame.size.height = 1000
+            self.greenRec.alpha = 0.7
+            self.billField.frame.origin.y = 200
+            self.billFieldBackgroundLabel.frame.origin.y = 200
             // Fade in the "enter bill amount" label
             self.billFieldBackgroundLabel.alpha = 0.4
         })
-        
     }
     
-    func animateShowAmount(timeToAnimate: NSTimeInterval){
+    func animateShowAmount(timeToAnimate: NSTimeInterval) {
         // Suddenly hide the "enter bill amount" label
         billFieldBackgroundLabel.alpha = 0
         UIView.animateWithDuration(timeToAnimate, animations: {
             // This causes the dark green rec to expand
             self.darkRec.frame.origin.y = 150
             self.greenRec.frame.size.height = 150
-
+            self.greenRec.alpha = 0.4
+            self.billField.frame.origin.y = 79
+            self.billFieldBackgroundLabel.frame.origin.y = 79
         })
-        
     }
 
+    func refreshTheme(){
+        
+        if darkBackgroundBool {
+            darkRec.backgroundColor = UIColor(red: 87/255, green: 38/255, blue: 127/255, alpha: 1.0)
+        }
+        else {
+             darkRec.backgroundColor = UIColor(red: 173/255, green: 121/255, blue: 165/255, alpha: 1.0)
+        }
+    }
 
     @IBAction func onTap(sender: AnyObject) {
         // Dismiss the keyboard
@@ -103,15 +116,19 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
 
         // Update default value
-        var defaults = NSUserDefaults.standardUserDefaults()
-
         tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipPct")
+        currencyInUse = defaults.integerForKey("defaultCurrency")
+        darkBackgroundBool = defaults.boolForKey("darkBackground")
+        
+        updateAllFields()
+        refreshTheme()
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        refreshTheme()
 
 
     }
@@ -123,7 +140,7 @@ class ViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-
+        
     }
     
     

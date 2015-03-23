@@ -11,18 +11,22 @@ import UIKit
 class SettingViewController: UIViewController {
 
     @IBOutlet weak var defaultTipControl: UISegmentedControl!
+    @IBOutlet weak var defaultCurrencyControl: UISegmentedControl!
+    @IBOutlet weak var darkBackgroundSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
         
         // Load default settings (I hope the scope is okay)
         var defaults = NSUserDefaults.standardUserDefaults()
         var defaultTipPctIndex = defaults.integerForKey("defaultTipPct")
+        var defaultCurrencyIndex = defaults.integerForKey("defaultCurrency")
+        var defaultDarkBackgroundBool = defaults.boolForKey("darkBackground")
 
         defaultTipControl.selectedSegmentIndex = defaultTipPctIndex
+        defaultCurrencyControl.selectedSegmentIndex = defaultCurrencyIndex
+        darkBackgroundSwitch.setOn(defaultDarkBackgroundBool,  animated:false)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +48,8 @@ class SettingViewController: UIViewController {
     @IBAction func onValueChanged(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(defaultTipControl.selectedSegmentIndex, forKey: "defaultTipPct")
+        defaults.setInteger(defaultCurrencyControl.selectedSegmentIndex, forKey: "defaultCurrency")
+        defaults.setBool(darkBackgroundSwitch.on, forKey: "darkBackground")
         defaults.synchronize()
     }
     
