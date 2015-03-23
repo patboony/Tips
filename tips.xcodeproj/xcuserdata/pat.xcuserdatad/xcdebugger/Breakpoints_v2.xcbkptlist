@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tips/ViewController.swift"
+            timestampString = "448765487.872105"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tips/ViewController.swift"
+            timestampString = "448762925.563284"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tips.ViewController.tipControl.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
+                  moduleName = "tips"
+                  urlString = "file:///Users/pat/Desktop/tips/tips/ViewController.swift"
+                  timestampString = "448762848.346204"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tips.ViewController.tipControl.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISegmentedControl&gt;"
+                  moduleName = "tips"
+                  urlString = "file:///Users/pat/Desktop/tips/tips/ViewController.swift"
+                  timestampString = "448762848.346479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tips.ViewController.init (tips.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; tips.ViewController"
+                  moduleName = "tips"
+                  urlString = "file:///Users/pat/Desktop/tips/tips/ViewController.swift"
+                  timestampString = "448762848.346617"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "261">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tips.ViewController.init (tips.ViewController.Type)() -&gt; tips.ViewController"
+                  moduleName = "tips"
+                  urlString = "file:///Users/pat/Desktop/tips/tips/ViewController.swift"
+                  timestampString = "448762848.346761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "177">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tips.ViewController.init (tips.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; tips.ViewController"
+                  moduleName = "tips"
+                  urlString = "file:///Users/pat/Desktop/tips/tips/ViewController.swift"
+                  timestampString = "448762848.346878"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
