@@ -3,11 +3,9 @@
 A basic tip calculator that will come in handy after your meal. Imagine that you and your friends, having just finished Sunday brunch with bottomless mimosas, are now facing the herculean task of calculating the proper amount of tip. Should you trust whatever the receipt suggested? Definitely not. Take control of your own finance by using this app.
 
 
-Time Spent
+Time Spent: Roughly 5 hours
 
-Roughly 5 hours
-
-Completed Features
+Completed Features:
 
  * [x] Required: Tip calculation showing total amount
  * [x] Required: Configurable default tip percentage
@@ -16,7 +14,7 @@ Completed Features
  * [x] Optional: Configurable default currency
  * [x] Optional: Configurable background color
 
-Installation Instructions
+Installation Instructions:
 
 Since I don't have a development account with Apple at the moment, the only way to "install" it right now is to add this project to Xcode and use the iOS simulator.
 
